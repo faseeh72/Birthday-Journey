@@ -1,2 +1,2 @@
 # Birthday Journey
-A Birthday Jouney website
+A Birthday Journey website
