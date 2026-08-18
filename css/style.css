@@ -1,0 +1,1750 @@
+/* ================================
+   DESIGN SYSTEM
+================================ */
+
+:root {
+    --background: #fff9fb;
+    --rose: #e75480;
+    --rose-dark: #d83a74;
+    --gold: #d4af37;
+    --text-dark: #2c2c2c;
+    --text-light: #777777;
+    --white: #ffffff;
+}
+
+
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+
+    color: var(--text-dark);
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #ffe8f0 0%,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #fff0f6 0%,
+            transparent 35%
+        ),
+        var(--background);
+
+    overflow: hidden;
+}
+
+
+/* ================================
+   WELCOME SECTION
+================================ */
+
+.welcome {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.welcome-content {
+    max-width: 700px;
+
+    text-align: center;
+
+    animation: welcomeFadeIn 1.5s ease forwards;
+}
+
+
+/* ================================
+   TEXT
+================================ */
+
+.eyebrow {
+    color: var(--rose);
+
+    font-size: 0.9rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+}
+
+
+h1 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(3.5rem, 12vw, 7rem);
+
+    line-height: 0.95;
+
+    font-weight: 700;
+
+    margin-bottom: 30px;
+}
+
+
+h1 span {
+    display: block;
+
+    color: var(--rose);
+
+    text-shadow:
+        0 8px 25px rgba(231, 84, 128, 0.15);
+}
+
+
+.message {
+    max-width: 520px;
+
+    margin: 0 auto 40px;
+
+    color: var(--text-light);
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+.start-button {
+    border: none;
+
+    background: var(--rose);
+
+    color: var(--white);
+
+    padding: 16px 28px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    box-shadow:
+        0 12px 30px rgba(231, 84, 128, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.start-button span {
+    font-size: 1.3rem;
+
+    transition: transform 0.3s ease;
+}
+
+
+.start-button:hover {
+    background: var(--rose-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 35px rgba(231, 84, 128, 0.3);
+}
+
+
+.start-button:hover span {
+    transform: translateX(5px);
+}
+
+
+.start-button:active {
+    transform: translateY(0);
+}
+
+
+/* ================================
+   ROSE PETALS
+================================ */
+
+.petals {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+.petals span {
+    position: absolute;
+
+    top: -50px;
+
+    font-size: 20px;
+
+    opacity: 0.35;
+
+    animation:
+        fall linear infinite;
+}
+
+
+/* Different petals start at different positions */
+
+.petals span:nth-child(1) {
+    left: 10%;
+    animation-duration: 9s;
+    animation-delay: 0s;
+}
+
+
+.petals span:nth-child(2) {
+    left: 30%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+
+.petals span:nth-child(3) {
+    left: 50%;
+    animation-duration: 10s;
+    animation-delay: 4s;
+}
+
+
+.petals span:nth-child(4) {
+    left: 70%;
+    animation-duration: 13s;
+    animation-delay: 1s;
+}
+
+
+.petals span:nth-child(5) {
+    left: 85%;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+
+.petals span:nth-child(6) {
+    left: 95%;
+    animation-duration: 14s;
+    animation-delay: 5s;
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes fall {
+
+    0% {
+        transform:
+            translateY(-50px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.35;
+    }
+
+    50% {
+        transform:
+            translateY(50vh)
+            translateX(30px)
+            rotate(180deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            translateX(-30px)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes welcomeFadeIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ================================
+   ACCESSIBILITY
+================================ */
+
+.start-button:focus-visible {
+    outline: 3px solid var(--gold);
+
+    outline-offset: 5px;
+}
+
+
+/* ================================
+   LETTER SECTION
+================================ */
+
+.letter {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 3;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s;
+}
+
+
+.letter.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* Letter card */
+
+.letter-card {
+    width: min(90%, 650px);
+
+    padding: 50px 40px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid rgba(231, 84, 128, 0.15);
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(80, 30, 50, 0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.letter-card h2 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(2.3rem, 7vw, 4rem);
+
+    margin-bottom: 30px;
+}
+
+
+.letter-content {
+    min-height: 180px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+#typewriter {
+    max-width: 520px;
+
+    color: var(--text-light);
+
+    font-size: 1rem;
+
+    line-height: 2;
+}
+
+
+/* Hide Continue button initially */
+
+#letterButton {
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s;
+}
+
+
+#letterButton.show {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+
+/* ================================
+   MEMORY LANE
+================================ */
+
+.memories {
+    min-height: 100vh;
+
+    padding: 80px 20px;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 4;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #ffe8f0 0%,
+            transparent 35%
+        ),
+        var(--background);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s;
+}
+
+
+.memories.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+.memories-container {
+    width: min(100%, 850px);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.memories h2 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(3rem, 8vw, 5rem);
+
+    margin-bottom: 15px;
+}
+
+
+.section-intro {
+    max-width: 550px;
+
+    margin: 0 auto 50px;
+
+    color: var(--text-light);
+
+    line-height: 1.8;
+}
+
+
+/* ================================
+   MEMORY TIMELINE
+================================ */
+
+.memory-timeline {
+    position: relative;
+
+    max-width: 700px;
+
+    margin: 0 auto 50px;
+
+    text-align: left;
+}
+
+
+/* The vertical line */
+
+.memory-timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--rose),
+            transparent
+        );
+}
+
+
+/* ================================
+   MEMORY CARD
+================================ */
+
+.memory-card {
+    position: relative;
+
+    margin-bottom: 35px;
+
+    padding-left: 55px;
+}
+
+
+.memory-dot {
+    position: absolute;
+
+    left: 9px;
+
+    top: 5px;
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: var(--rose);
+
+    border: 4px solid var(--background);
+
+    box-shadow:
+        0 0 0 3px rgba(231, 84, 128, 0.15);
+}
+
+
+.memory-content {
+    background: rgba(255, 255, 255, 0.75);
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(231, 84, 128, 0.1);
+
+    box-shadow:
+        0 12px 35px rgba(80, 30, 50, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.memory-content:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 40px rgba(80, 30, 50, 0.1);
+}
+
+
+.memory-year {
+    display: inline-block;
+
+    color: var(--rose);
+
+    font-weight: 600;
+
+    font-size: 0.9rem;
+
+    margin-bottom: 8px;
+}
+
+
+.memory-title {
+    font-size: 1.3rem;
+
+    margin-bottom: 8px;
+}
+
+
+.memory-description {
+    color: var(--text-light);
+
+    line-height: 1.7;
+
+    font-size: 0.95rem;
+}
+
+
+
+/* ================================
+   MEMORY MEDIA
+================================ */
+
+.memory-media {
+    display: block;
+
+    width: 100%;
+
+    max-height: 400px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    margin-bottom: 20px;
+}
+
+
+.memory-details {
+    padding: 0 5px;
+}
+
+
+.memory-content img {
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+}
+
+
+.memory-content video {
+    aspect-ratio: 16 / 10;
+
+    background: #222;
+}
+
+
+/* ================================
+   APPRECIATION
+================================ */
+
+.appreciation {
+    min-height: 100vh;
+
+    padding: 70px 20px;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #ffe8f0 0%,
+            transparent 35%
+        ),
+        var(--background);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s;
+}
+
+
+.appreciation.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+.appreciation-container {
+    width: min(100%, 950px);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.appreciation h2 {
+    max-width: 700px;
+
+    margin: 0 auto 15px;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(2.8rem, 7vw, 5rem);
+}
+
+
+/* ================================
+   APPRECIATION GRID
+================================ */
+
+.appreciation-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin: 50px auto;
+
+    max-width: 800px;
+}
+
+
+.appreciation-card {
+    padding: 35px 25px;
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    border:
+        1px solid rgba(231, 84, 128, 0.12);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 12px 35px rgba(80, 30, 50, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.appreciation-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 45px rgba(80, 30, 50, 0.1);
+}
+
+
+.appreciation-icon {
+    font-size: 2.5rem;
+
+    margin-bottom: 15px;
+}
+
+
+.appreciation-title {
+    font-size: 1.25rem;
+
+    margin-bottom: 10px;
+}
+
+
+.appreciation-description {
+    color: var(--text-light);
+
+    line-height: 1.7;
+
+    font-size: 0.95rem;
+}
+
+
+@media (max-width: 600px) {
+
+    .appreciation-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin-top: 35px;
+    }
+
+
+    .appreciation-card {
+        padding: 28px 22px;
+    }
+
+}
+
+
+
+/* ================================
+   BIRTHDAY WISH
+================================ */
+
+.wish {
+    min-height: 100vh;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 6;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff0f5 0%,
+            var(--background) 65%
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(0.97);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease,
+        visibility 0.9s;
+}
+
+
+.wish.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+.wish-container {
+    width: min(100%, 700px);
+
+    text-align: center;
+}
+
+
+.wish-rose {
+    font-size: 3rem;
+
+    margin-bottom: 20px;
+
+    animation:
+        gentleFloat 3s ease-in-out infinite;
+}
+
+
+.wish h2 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(3rem, 8vw, 5.5rem);
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+
+.wish h2 span {
+    display: block;
+
+    color: var(--rose);
+}
+
+
+.wish-divider {
+    color: var(--gold);
+
+    font-size: 1.2rem;
+
+    margin-bottom: 30px;
+
+    letter-spacing: 8px;
+}
+
+
+.wish-text {
+    max-width: 600px;
+
+    margin: 0 auto 40px;
+
+    color: var(--text-light);
+
+    font-size: 1.05rem;
+
+    line-height: 2;
+
+    white-space: pre-line;
+}
+
+
+@keyframes gentleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* ================================
+   FINAL GIFT
+================================ */
+
+.gift {
+    min-height: 100vh;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 7;
+
+    overflow-y: auto;
+
+    padding: 50px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff0f5 0%,
+            var(--background) 65%
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(0.96);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s;
+}
+
+
+.gift.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+.gift-container {
+    width: min(100%, 800px);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* ================================
+   GIFT INTRO
+================================ */
+
+.gift-intro {
+    min-height: 85vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.gift-icon {
+    font-size: 5rem;
+
+    margin-bottom: 25px;
+
+    animation:
+        giftFloat 2.5s ease-in-out infinite;
+}
+
+
+.gift-intro h2 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(3rem, 8vw, 5.5rem);
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+
+.gift-intro h2 span {
+    display: block;
+
+    color: var(--rose);
+}
+
+
+.gift-intro p:not(.eyebrow) {
+    color: var(--text-light);
+
+    margin-bottom: 35px;
+
+    line-height: 1.8;
+}
+
+
+/* ================================
+   GIFT CONTENT
+================================ */
+
+.gift-content {
+    display: none;
+
+    padding: 30px 0 80px;
+}
+
+
+.gift-content.show {
+    display: block;
+
+    animation:
+        giftReveal 1.2s ease;
+}
+
+
+/* ================================
+   CELEBRATION
+================================ */
+
+.celebration {
+    margin-bottom: 40px;
+}
+
+
+.rose-decoration {
+    font-size: 2.5rem;
+
+    margin-bottom: 15px;
+}
+
+
+.celebration h2 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(3rem, 8vw, 5rem);
+
+    line-height: 1.1;
+}
+
+
+.celebration h2 span {
+    display: block;
+
+    color: var(--rose);
+}
+
+
+/* ================================
+   FINAL PHOTO
+================================ */
+
+.final-photo-wrapper {
+    margin: 30px auto 45px;
+
+    max-width: 650px;
+
+    padding: 12px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(80, 30, 50, 0.12);
+}
+
+
+.final-photo {
+    display: block;
+
+    width: 100%;
+
+    max-height: 600px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+
+/* ================================
+   FINAL VIDEO
+================================ */
+
+.final-video-wrapper {
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+}
+
+
+.media-label {
+    color: var(--rose);
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+
+.final-video {
+    display: block;
+
+    width: 100%;
+
+    border-radius: 18px;
+
+    background: #111;
+
+    box-shadow:
+        0 20px 50px rgba(80, 30, 50, 0.12);
+}
+
+
+/* ================================
+   FINAL LETTER
+================================ */
+
+.final-letter {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding: 40px 30px;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    border-radius: 25px;
+
+    border:
+        1px solid rgba(231, 84, 128, 0.12);
+
+    box-shadow:
+        0 15px 40px rgba(80, 30, 50, 0.06);
+
+    text-align: left;
+}
+
+
+.final-letter h3 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 2.5rem;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.final-letter p {
+    color: var(--text-light);
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+
+.final-letter p:first-of-type {
+    color: var(--text);
+
+    font-weight: 600;
+}
+
+
+.final-signature {
+    text-align: right;
+
+    font-style: italic;
+
+    margin-top: 35px;
+}
+
+
+/* ================================
+   FINAL ENDING
+================================ */
+
+.final-ending {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 50px;
+
+    color: var(--rose);
+}
+
+
+.final-ending p {
+    margin: 0;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 1.4rem;
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes giftFloat {
+
+    0%,
+    100% {
+        transform: translateY(0)
+                   rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-12px)
+                   rotate(2deg);
+    }
+
+}
+
+
+@keyframes giftReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .gift {
+        padding:
+            30px 15px;
+    }
+
+
+    .gift-icon {
+        font-size: 4rem;
+    }
+
+
+    .final-letter {
+        padding: 30px 22px;
+    }
+
+
+    .final-ending {
+        gap: 10px;
+    }
+
+}
+
+
+/* =================================
+   FINAL MOBILE POLISH
+================================= */
+
+@media (max-width: 600px) {
+
+    /* Better mobile viewport behavior */
+
+    .welcome,
+    .letter,
+    .memories,
+    .appreciation,
+    .wish,
+    .gift {
+        min-height: 100dvh;
+    }
+
+
+    /* -----------------------------
+       GENERAL TEXT
+    ----------------------------- */
+
+    .eyebrow {
+        font-size: 0.75rem;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 14px;
+    }
+
+
+    .message {
+        font-size: 0.95rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* -----------------------------
+       BUTTONS
+    ----------------------------- */
+
+    .start-button {
+        min-height: 48px;
+
+        padding:
+            14px 22px;
+
+        font-size: 0.95rem;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+
+    /* -----------------------------
+       LETTER
+    ----------------------------- */
+
+    .letter {
+        padding: 20px 15px;
+
+        overflow-y: auto;
+
+        align-items: center;
+    }
+
+
+    .letter-card {
+        width: 100%;
+
+        max-width: 650px;
+
+        padding:
+            32px 22px;
+
+        border-radius: 24px;
+    }
+
+
+    .letter-card h2 {
+        font-size: clamp(
+            2.2rem,
+            12vw,
+            3.2rem
+        );
+
+        margin-bottom: 22px;
+    }
+
+
+    .letter-content {
+        min-height: 150px;
+
+        margin-bottom: 25px;
+    }
+
+
+    #typewriter {
+        font-size: 0.92rem;
+
+        line-height: 1.8;
+    }
+
+
+    /* -----------------------------
+       MEMORY LANE
+    ----------------------------- */
+
+    .memories {
+        padding:
+            55px 15px 40px;
+    }
+
+
+    .memories h2 {
+        font-size: clamp(
+            2.8rem,
+            13vw,
+            4rem
+        );
+    }
+
+
+    .section-intro {
+        font-size: 0.92rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 35px;
+    }
+
+
+    .memory-timeline {
+        width: 100%;
+
+        margin-bottom: 35px;
+    }
+
+
+    .memory-card {
+        padding-left: 42px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .memory-timeline::before {
+        left: 12px;
+    }
+
+
+    .memory-dot {
+        left: 3px;
+
+        width: 19px;
+
+        height: 19px;
+    }
+
+
+    .memory-content {
+        padding: 18px;
+
+        border-radius: 17px;
+    }
+
+
+    .memory-title {
+        font-size: 1.15rem;
+    }
+
+
+    .memory-description {
+        font-size: 0.9rem;
+
+        line-height: 1.65;
+    }
+
+
+    .memory-media {
+        max-height: none;
+
+        aspect-ratio: 16 / 10;
+
+        object-fit: cover;
+    }
+
+
+    /* -----------------------------
+       APPRECIATION
+    ----------------------------- */
+
+    .appreciation {
+        padding:
+            55px 15px 40px;
+    }
+
+
+    .appreciation h2 {
+        font-size: clamp(
+            2.6rem,
+            12vw,
+            4rem
+        );
+    }
+
+
+    .appreciation-grid {
+        margin:
+            35px auto;
+
+        gap: 15px;
+    }
+
+
+    .appreciation-card {
+        padding:
+            25px 20px;
+    }
+
+
+    .appreciation-icon {
+        font-size: 2.2rem;
+    }
+
+
+    /* -----------------------------
+       BIRTHDAY WISH
+    ----------------------------- */
+
+    .wish {
+        padding:
+            30px 18px;
+    }
+
+
+    .wish h2 {
+        font-size: clamp(
+            2.8rem,
+            13vw,
+            4rem
+        );
+
+        line-height: 1.05;
+    }
+
+
+    .wish-text {
+        font-size: 0.95rem;
+
+        line-height: 1.85;
+
+        margin-bottom: 32px;
+    }
+
+
+    .wish-rose {
+        font-size: 2.6rem;
+    }
+
+
+    /* -----------------------------
+       FINAL GIFT
+    ----------------------------- */
+
+    .gift {
+        padding:
+            25px 15px 45px;
+    }
+
+
+    .gift-intro {
+        min-height: 85dvh;
+    }
+
+
+    .gift-intro h2 {
+        font-size: clamp(
+            2.8rem,
+            13vw,
+            4rem
+        );
+    }
+
+
+    .gift-icon {
+        font-size: 4rem;
+    }
+
+
+    .celebration h2 {
+        font-size: clamp(
+            2.8rem,
+            13vw,
+            4.3rem
+        );
+    }
+
+
+    .final-photo-wrapper {
+        padding: 8px;
+
+        margin:
+            25px auto 35px;
+
+        border-radius: 16px;
+    }
+
+
+    .final-photo {
+        max-height: none;
+
+        aspect-ratio: 4 / 5;
+
+        object-fit: cover;
+    }
+
+
+    .final-video-wrapper {
+        margin-bottom: 40px;
+    }
+
+
+    .final-video {
+        border-radius: 14px;
+    }
+
+
+    .final-letter {
+        padding:
+            28px 20px;
+
+        border-radius: 20px;
+    }
+
+
+    .final-letter h3 {
+        font-size: 2.2rem;
+
+        margin-bottom: 25px;
+    }
+
+
+    .final-letter p {
+        font-size: 0.92rem;
+
+        line-height: 1.8;
+    }
+
+
+    .final-signature {
+        text-align: left;
+
+        margin-top: 30px;
+    }
+
+
+    .final-ending {
+        flex-wrap: wrap;
+
+        margin-top: 40px;
+    }
+
+
+    .final-ending p {
+        font-size: 1.2rem;
+
+        text-align: center;
+    }
+
+}
