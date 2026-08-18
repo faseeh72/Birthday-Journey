@@ -53,6 +53,18 @@ const giftIntro =
 const giftContent =
     document.getElementById("giftContent");
 
+const accessLock =
+    document.getElementById("accessLock");
+
+const accessForm =
+    document.getElementById("accessForm");
+
+const accessPassword =
+    document.getElementById("accessPassword");
+
+const accessError =
+    document.getElementById("accessError");
+
 /* =================================
    BIRTHDAY MESSAGE
 ================================= */
@@ -459,5 +471,52 @@ openGiftButton.addEventListener("click", function () {
     giftIntro.style.display = "none";
 
     giftContent.classList.add("show");
+
+});
+
+
+
+/* =================================
+   ACCESS LOCK
+================================= */
+
+const SECRET_PASSWORD = "roma23";
+
+
+accessForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const enteredPassword =
+        accessPassword.value.trim();
+
+
+    if (enteredPassword === SECRET_PASSWORD) {
+
+        console.log("Access granted.");
+
+        accessError.textContent = "";
+
+        accessLock.classList.add("unlocked");
+
+        setTimeout(function () {
+
+            accessLock.style.display = "none";
+
+        }, 850);
+
+
+    } else {
+
+        console.log("Access denied.");
+
+        accessError.textContent =
+            "That isn't the secret. Try again ❤️";
+
+        accessPassword.value = "";
+
+        accessPassword.focus();
+
+    }
 
 });

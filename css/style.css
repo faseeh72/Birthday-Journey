@@ -1748,3 +1748,196 @@ h1 span {
     }
 
 }
+
+
+/* =================================
+   ACCESS LOCK
+================================= */
+
+.access-lock {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #ffe8f0 0%,
+            transparent 40%
+        ),
+        var(--background);
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+
+.access-lock.unlocked {
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+.access-card {
+    width: min(100%, 470px);
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    border:
+        1px solid rgba(231, 84, 128, 0.14);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 70px rgba(80, 30, 50, 0.12);
+
+    backdrop-filter: blur(12px);
+}
+
+
+.access-rose {
+    font-size: 3rem;
+
+    margin-bottom: 15px;
+}
+
+
+.access-card h1 {
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: clamp(
+        3rem,
+        10vw,
+        4.5rem
+    );
+
+    line-height: 1;
+
+    margin-bottom: 20px;
+}
+
+
+.access-card h1 span {
+    display: block;
+
+    color: var(--rose);
+}
+
+
+.access-message {
+    max-width: 340px;
+
+    margin: 0 auto 28px;
+
+    color: var(--text-light);
+
+    line-height: 1.7;
+
+    font-size: 0.95rem;
+}
+
+
+#accessForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+#accessPassword {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding: 14px 18px;
+
+    border:
+        1px solid rgba(231, 84, 128, 0.2);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    text-align: center;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+#accessPassword:focus {
+    border-color: var(--rose);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(231, 84, 128, 0.08);
+}
+
+
+.access-error {
+    min-height: 22px;
+
+    margin-top: 15px;
+
+    color: #c94a68;
+
+    font-size: 0.85rem;
+}
+
+
+@media (max-width: 600px) {
+
+    .access-lock {
+        padding: 15px;
+    }
+
+
+    .access-card {
+        padding:
+            35px 22px;
+
+        border-radius: 24px;
+    }
+
+
+    .access-card h1 {
+        font-size: clamp(
+            2.8rem,
+            14vw,
+            4rem
+        );
+    }
+
+}
