@@ -70,9 +70,9 @@ const accessError =
 ================================= */
 
 const birthdayMessage = `
-Dear Roma,
+Senior, I know you might be expecting a normal birthday card from me this year, but
 
-Today is your 23rd birthday, and I wanted to create
+I wanted to create
 something a little different for you.
 
 Instead of giving you a normal birthday card,
@@ -150,12 +150,12 @@ function startTypewriter() {
 const memories = [
 
     {
-        year: "2019",
+        year: "Old but Gold",
 
-        title: "A Beautiful Memory",
+        title: "A Beautiful smile",
 
         description:
-            "One of those moments that deserves to be remembered.",
+            "No Worries era, just enjoying every moment without stresses of world.",
 
         type: "image",
 
@@ -164,9 +164,9 @@ const memories = [
 
 
     {
-        year: "2021",
+        year: "Togetherness",
 
-        title: "Another Chapter",
+        title: "A Beautiful Memory",
 
         description:
             "Some memories become more precious as the years pass.",
@@ -180,7 +180,7 @@ const memories = [
     {
         year: "2023",
 
-        title: "That Funny Moment",
+        title: "Just One clip of us all together",
 
         description:
             "A moment that still makes me smile whenever I remember it.",
@@ -197,11 +197,11 @@ const memories = [
         title: "Today",
 
         description:
-            "And now we're here, celebrating another beautiful year of your life.",
+            "And now we're here, shining brightly in path of MBBS, a sense of accomplishment.",
 
         type: "image",
 
-        media: "images/memories/memory-3.jpg"
+        media: "images/memories/memory-4.jpg"
     }
 
 ];
